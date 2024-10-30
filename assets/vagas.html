@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.vagas.css">
+</head>
+
+<body>
+    <div id="visualizacaoVagas">
+        <h1>Vagas Publicadas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome da Vaga</th>
+                    <th>Salário</th>
+                    <th>Contato</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaVagas">
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <button id="criarVagas" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#vagaModal">
+                Publicar Vaga
+            </button>
+        </div>
+    </div>
+    <main>
+        <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="vagaModalLabel">Publique sua vaga</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="vagaForm">
+                            <fieldset>
+                                Nome da Vaga <input id="nomeDaVaga" name="titulo_vaga" class="text" type="text"
+                                    required><br>
+                                Descrição Completa da vaga: <input name="descricao" class="text" type="text" required><br>
+                                Escolaridade Exigida:<br>
+                                <input type="radio" name="schooling" value="Ensino Fundamental" required>Ensino Fundamental
+                                <input type="radio" name="schooling" value="Ensino Médio Completo" required>Ensino Médio Completo<br>
+                                <input type="radio" name="schooling" value="Superior em Andamento" required>Superior em Andamento
+                                <input type="radio" name="schooling" value="Superior Completo" required>Superior Completo<br>
+                                Requisitos: <input name="requisitos" class="text" type="text" required><br>
+                                Responsabilidade e Atribuições: <input name="responsabilidades" class="text" type="text" required><br>
+                                Benefícios: <input name="beneficios" class="text" type="text" required><br>
+                                Salário: <input id="salario" class="text" type="text" required><br>
+                                Localização: <input id="localizacao" class="text" type="text" required><br>
+                                Tipo de trabalho:<br>
+                                <input type="radio" name="type-job" value="Efetivo - CLT" required>Efetivo - CLT
+                                <input type="radio" name="type-job" value="PJ" required>PJ
+                                <input type="radio" name="type-job" value="Estagiário" required>Estagiário<br>
+                                Modelo de trabalho:<br>
+                                <label><input type="radio" name="Modelo" value="presencial" required>Presencial</label>
+                                <label><input type="radio" name="Modelo" value="remoto" required>Remoto</label>
+                                <label><input type="radio" name="Modelo" value="hibrido" required>Híbrido</label><br>
+                                Dias de Trabalho:<br>
+                                <input type="radio" name="day" value="segsex" required>De segunda à sexta-feira
+                                <input type="radio" name="day" value="alldays" required>Dias úteis e finais de semana<br>
+                                Turno de Trabalho:<br>
+                                <input type="radio" name="job" value="6hrs" required>6hrs
+                                <input type="radio" name="job" value="8hrs" required>8hrs
+                                <input type="radio" name="job" value="10hrs" required>10hrs
+                                <input type="radio" name="job" value="12hrs" required>12hrs<br>
+                                Sobre a Empresa: <input name="sobreEmpresa" class="text" type="text" required><br>
+                                Entre em contato: <input id="contato" class="text" type="text" required><br>
+                                <button type="button" id="cancelarVaga" class="btn btn-danger">Cancelar</button>
+                                <button type="button" id="excluirVaga" class="btn btn-warning"
+                                    style="display: none;">Excluir Vaga</button>
+                                <input id="publicarVaga" type="submit" class="btn btn-success" value="Publicar vaga">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+<script src="vagas.js"></script>
+
+</html>
